@@ -220,7 +220,7 @@ def main():
   except:
     pass
   attrs = {}
-  attrs["bpm"] = str(round(data.get("rhythm",{}).get("bpm", 0), 1))
+  attrs["bpm"] = round(data.get("rhythm",{}).get("bpm", 0), 1)
   attrs["key"] = KEY_LOOKUP.get((data.get("tonal", {}).get("key_key", "") + data.get("tonal", {}).get("key_scale", "")).upper(), None)
   sys.stdout.write(json.dumps(attrs) + "\n")
 
